@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gatitos</title>
+	<link rel="stylesheet" href="./styles.css">
+	<link rel="stylesheet" href="./tablet.css" media="(min-width:900px)">
+</head>
+<body>
+	<header>
+		<h1> Random Cats</h1>
+		<nav class="nav-bar-container">
+			<ul class="nav-bar">
+				<li class="nav-bar__item">Home</li>
+				<li class="nav-bar__item">Who we are</li>
+				<li class="nav-bar__item">Donate</li>
+				<li class="nav-bar__item">How to adopt</li>
+			</ul>
+		</nav>
+	</header>
+	<span id="spanError"></span>
+	<section class="random-cats">
+		<h2>Enjoy the pretty cats</h2>
+		
+		<article class="cat-container">
+			<img class="cat-container__img" id="img1" src="" alt="">
+			<button class="cat-container__button" id="saveCat1" >Save a Cat</button>
+		</article> 
+		<article class="cat-container">
+			<img class="cat-container__img" id="img2" src="" alt="">
+			<button class="cat-container__button" id="saveCat2" >Save a Cat</button>
+		</article> 
+		<article class="cat-container">
+			<img class="cat-container__img" id="img3" src="" alt="">
+			<button class="cat-container__button" id="saveCat3" >Save a Cat</button>
+		</article> 
+	</section>
+	<button onclick="loadRandomCats()" class="cat-container__button button--favorites">Show me more Cats</button>	
+
+	<section class="favoritesCats" id="favoritesCats">
+		<h2>Favourites Cats</h2>
+
+		<article class="favouriteCatsArticle">
+			<img class="cat-container__img" id="img" src="" alt="Picture random cat">
+			<button class="cat-container__button" id="">Remove cats from favourites</button>
+		</article>
+	</section>
+
+	<script src="./main.js"></script>
+</body>
+</html>

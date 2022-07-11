@@ -1,0 +1,105 @@
+:root{
+    --main-color:rgb(226, 132, 19);
+    --main-txt:rgb(48, 52, 63);
+    --background:rgb(218, 224, 242);
+    --tertiary-color:rgb(244, 91, 105);
+    --secondary-color:rgb(98, 148, 96);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h1{
+    margin: 40px;
+    text-align: center;
+    font-size: 5rem;
+}
+body{
+    background-color: var(--background);
+}
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.random-cats{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+    background-color: var(--tertiary-color);
+    border-top-left-radius: 10rem;
+    border-top-right-radius: 10rem;
+}
+h2{
+    width: 100%;
+    font-size: 3.5rem;
+    color: var(--main-txt);
+    margin: 40px;
+}
+.cat-container{
+    display:flex;
+    flex-direction:column;
+    align-content:center;
+    padding: 20px;
+}
+.cat-container__img{
+    display: block;
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+.cat-container__button{
+    width:150px;
+    margin: 20px;
+    padding: 15px 0;
+    align-self: center;
+    background-color: var(--main-color);
+    font-size: 1.8rem;
+    font-weight: bold;
+    border-radius: 10px;
+    color: rgb(24, 24, 63);
+    border: none;
+}
+.cat-container__button:hover{
+    background-color: rgb(166, 217, 163);
+}
+.favoritesCats{
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: var(--secondary-color);
+    border-top-left-radius: 10rem;
+    border-top-right-radius: 10rem;
+}
+
+.button--favorites{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    width:190px;
+    background-color:var(--secondary-color);
+    color: var(--background);
+}
+.favoritesCats__article{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: center;
+}
+.favoritesCats__btn{
+    background-color: var(--tertiary-color);
+    color: var(--background);
+    width: 190px;
+}

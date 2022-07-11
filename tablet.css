@@ -1,0 +1,20 @@
+.nav-bar-container{
+    display: flex;
+    width: 70%;
+    margin-top: 25px;
+}
+.nav-bar{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items:flex-start;
+    list-style: none;
+}
+.nav-bar__item{
+    padding: 15px;
+    font-size:2.0rem;
+}
+.nav-bar__item:hover{
+    color: var(--tertiary-color);
+    border-bottom: solid;
+}
