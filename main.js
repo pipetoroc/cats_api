@@ -1,6 +1,7 @@
 const URL_API_RANDOM = "https://api.thecatapi.com/v1/images/search?limit=3";
-const URL_API_FAVOURITES = "https://api.thecatapi.com/v1/favourites?";
+const URL_API_FAVOURITES = "https://api.thecatapi.com/v1/favourites";
 const URL_API_DELETE = (id) => `https://api.thecatapi.com/v1/favourites/${id}`;
+const URL_API_UPLOAD = "https://api.thecatapi.com/v1/images/upload";
 
 // Llamada a API usando promesas
 //fetch(URL)
@@ -41,7 +42,7 @@ async function loadFavouritesCats(){ //La función reload se crea en el boton de
 	const res = await fetch(URL_API_FAVOURITES, {
 		method: 'GET',
 		headers:{
-		'X-API-KEY':'a1233fc3-1b19-4e63-ae8b-d4e8571fd6d1',
+		'X-API-KEY':'5098bd29-025c-43b4-bf4c-cbf2f66689be',
 		},
 	});
 	const data = await res.json();//Se transforma la sintaxis para que javaScript entienda el contexto.
@@ -82,7 +83,7 @@ async function saveFavouritesCat (id){
 		method: 'POST',
 		headers:{
 			'Content-Type': 'application/json',
-			'x-api-key':'a1233fc3-1b19-4e63-ae8b-d4e8571fd6d1', 
+			'x-api-key':'5098bd29-025c-43b4-bf4c-cbf2f66689be', 
 		},
 		body:JSON.stringify({
 			image_id: id
@@ -105,7 +106,7 @@ async function deleteFavouriteCat (id){
 	const res = await fetch(URL_API_DELETE(id), {
 		method: 'DELETE',
 		headers:{
-			'x-api-key':'a1233fc3-1b19-4e63-ae8b-d4e8571fd6d1'
+			'x-api-key':'5098bd29-025c-43b4-bf4c-cbf2f66689be'
 		}
 	});
 	const data = await res.json();
@@ -118,8 +119,34 @@ async function deleteFavouriteCat (id){
 	}
 }
 
+async function loadCatPhoto () {
+	const form = document.querySelector('#uploadingForm');
+	const formData = new FormData(form);
+
+	console.log(formData.get('file'))
+
+	const res = await fetch(URL_API_UPLOAD, {
+		method: 'POST',
+		headers:{
+			//'Content-type': 'multipart/form-Data',
+			'X-API-KEY': '5098bd29-025c-43b4-bf4c-cbf2f66689be',
+		},
+		body: formData,
+	});
+	const data = await res.json();
+	
+	if(res.status !== 201){
+		spanError.innerHTML = "Hubo un error: " + res.status + data.message;
+		console.log({data})
+	}else{
+		console.log('Photo load sucesfully')
+		console.log({data})
+		console.log(data.url)
+		saveFavouritesCat(data.id);
+	}
+}
+
 loadRandomCats(); //Se llama dos veces la función para que no aparesca  vacio al principio.
 loadFavouritesCats(); 
-
 
 

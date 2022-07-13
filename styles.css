@@ -81,7 +81,6 @@ h2{
     border-top-left-radius: 10rem;
     border-top-right-radius: 10rem;
 }
-
 .button--favorites{
     display: block;
     margin: 0 auto;
@@ -102,4 +101,24 @@ h2{
     background-color: var(--tertiary-color);
     color: var(--background);
     width: 190px;
+}
+.uploadingCat{
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-top-left-radius: 10rem;
+    border-top-right-radius: 10rem;
+}
+.uploadingCat__title{
+    width: 90%;
+}
+#uploadingForm{
+    display: block;
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
